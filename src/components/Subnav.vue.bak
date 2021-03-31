@@ -1,0 +1,38 @@
+<template>
+  <div class="container mt-4 mb-4">
+      <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" :class="{ active: activeTab === 1 }" aria-current="page" href="#" @click="activeTab = 1">All Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" :class="{ active: activeTab === 2 }" href="#" @click="activeTab = 2">Urgent</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" :class="{ active: activeTab === 3 }" href="#" @click="activeTab = 3">Ongoing</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" :class="{ active: activeTab === 4 }" href="#" @click="activeTab = 4">Waiting on Customer</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" :class="{ active: activeTab === 5 }" href="#" @click="activeTab = 5">Waiting on Parts</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" :class="{ active: activeTab === 6 }" href="#" @click="activeTab = 6">On Hold</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" :class="{ active: activeTab === 7 }" href="#" @click="activeTab = 7">Scheduled</a>
+  </li>
+</ul>
+  </div>
+</template>
+
+<script setup>
+    import { ref } from 'vue'
+
+    const activeTab = ref(1)
+
+</script>
+
+<style>
+
+</style>

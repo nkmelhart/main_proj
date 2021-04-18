@@ -22,6 +22,10 @@
           <input type="text" class="form-control mb-3" id="inputPOC" required>
           <label for="inputPhone">Contact Phone Number</label>
           <input type="text" class="form-control mb-3" id="inputPhone" required>
+          <label for="inputPhone">Assigned To</label>
+          <select class="form-control" id="client">
+            <option value="1">Here will be a list of technicians</option>
+          </select>
         </div>
         </div>
         <div class='row'>
@@ -56,7 +60,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 label{
   font-weight: bold;
@@ -64,7 +68,6 @@ label{
 
 input, select{
   width: 300px;
-  margin-top: 30px;
 }
 textarea{
   height: 250px;

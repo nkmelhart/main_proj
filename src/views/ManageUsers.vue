@@ -1,12 +1,17 @@
 <template>
   <div>
-      <p class="text-center mt-5">You are in manage users</p>
+    <ManageUsersSubNav/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-export default {
 
+import ManageUsersSubNav from '../components/ManageUsersSubNav'
+
+export default {
+  name: 'ManagerUsers',
+  components: { ManageUsersSubNav }
 }
 </script>
 

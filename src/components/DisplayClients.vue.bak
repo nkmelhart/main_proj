@@ -1,0 +1,108 @@
+<template>
+    <div v-for="obj in tempArray">
+  <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" :data-bs-target="'#' + obj.client" aria-expanded="true" aria-controls="collapseOne">
+        {{obj.client}}
+      </button>
+    </h2>
+    <div :id="obj.client" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="row">
+            <div class="col-5">
+                <table class="table table-borderless">
+                    <thead/>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Main Point of Contact:</th>
+                                <td>Test McTesterson</td>
+                            
+                        </tr>
+                         <tr>
+                            <th scope="row">Point of Contact Email:</th>
+                                <td>test@test.com</td>
+                        </tr>
+                         <tr>
+                            <th scope="row">Address:</th>
+                                <td>123 Fake St.</td>
+                            
+                        </tr>
+                         <tr>
+                            <th scope="row">State:</th>
+                                <td>Texas</td>
+                            
+                        </tr>
+                         <tr>
+                            <th scope="row">City:</th>
+                                <td>McAllen</td>
+                            
+                        </tr>
+                         <tr>
+                            <th scope="row">Zip:</th>
+                                <td>78504</td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-2"/>
+            <div class="col-5">
+                <table class="table table-borderless">
+                    <thead/>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Contract Number:</th>
+                                <td>14-236A</td>
+                            
+                        </tr>
+                         <tr>
+                            <th scope="row">Contract Type:</th>
+                                <td>Support + Email</td>
+                        </tr>
+                         <tr>
+                            <th scope="row">Contract Start Date:</th>
+                                <td>June-07-2021</td>
+                            
+                        </tr>
+                         <tr>
+                            <th scope="row">Contract End Date:</th>
+                                <td>Apr-02-2022</td>
+                            
+                        </tr>
+                         <tr>
+                            <th scope="row">Leased Equipment:</th>
+                                <td>Yes</td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</template>
+
+<script>
+import { ref } from 'vue'
+export default {
+
+    setup(){
+        const tempArray = ref([
+            { id:1, client: "STC"},
+            { id:2, client: "Melharts"},
+            { id:3, client: "Cisco"}
+        ])
+
+        return {tempArray}
+    }
+
+}
+</script>
+
+<style>
+
+</style>

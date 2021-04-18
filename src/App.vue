@@ -1,5 +1,5 @@
 <template>
-    <Navbar v-if="checkAuth === true"/>
+    <Navbar/>
   <router-view/>
 </template>
 

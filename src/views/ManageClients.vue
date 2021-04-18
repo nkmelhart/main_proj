@@ -1,12 +1,17 @@
 <template>
   <div>
-      <p class="text-center mt-5">You are in manage clients</p>
+    <ManageClientsSubNav/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-export default {
 
+import ManageClientsSubNav from '../components/ManageClientsSubNav'
+
+export default {
+  name: 'ManagerClients',
+  components: { ManageClientsSubNav }
 }
 </script>
 

@@ -8,6 +8,12 @@ import ManageUsers from '../views/ManageUsers.vue'
 import ViewClients from '../views/ViewClients.vue'
 import NotFound from '../views/NotFound'
 import SearchTickets from '../views/SearchTickets'
+import AddNotes from '../views/AddNotes'
+import ViewNotes from '../views/ViewNotes'
+import UserEdit from '../views/UserEdit'
+import UserAdd from '../views/UserAdd'
+import ClientEdit from '../views/ClientEdit'
+import ClientAdd from '../views/ClientAdd'
 import { isAuthorized } from '../helpers/useAuth'
 
 const routes = [
@@ -20,64 +26,75 @@ const routes = [
     path: '/main',
     name: 'Main',
     component: Main,
-    beforeEnter: (to, from) => {
-      if (isAuthorized.value) return true
-      return '/'
-    }
+    //beforeEnter: (to, from) => {
+    //  if (isAuthorized.value) return true
+    //  return '/'
   },
   {
     path: '/create',
     name: 'Create',
     component: Create,
-    beforeEnter: (to, from) => {
-      if (isAuthorized.value) return true
-      return '/'
-    }
   },
   {
     path: '/searchtickets',
     name: 'SearchTickets',
     component: SearchTickets,
-    beforeEnter: (to, from) => {
-      if (isAuthorized.value) return true
-      return '/'
-    }
   },
   {
     path: '/closedtickets',
     name: 'ClosedTickets',
     component: ClosedTickets,
-    beforeEnter: (to, from) => {
-      if (isAuthorized.value) return true
-      return '/'
-    }
   },
   {
     path: '/manageclients',
     name: 'ManageClients',
     component: ManageClients,
-    beforeEnter: (to, from) => {
-      if (isAuthorized.value) return true
-      return '/'
-    }
+    children: [
+      {
+        path: '/manageclients/clientedit',
+        name: 'ClientEdit',
+        component: ClientEdit,
+      },
+      {
+        path: '/manageclients/clientadd',
+        name: 'ClientAdd',
+        component: ClientAdd,
+      }
+    ]
   },
   {
     path: '/manageusers',
     name: 'ManageUsers',
     component: ManageUsers,
-    beforeEnter: (to, from) => {
-      if (isAuthorized.value) return true
-      return '/NotFound'
-    }
+    children: [
+      {
+        path: '/manageusers/useradd',
+        name: 'UserAdd',
+        component: UserAdd
+      },
+      {
+        path: '/manageusers/useredit',
+        name: 'UserEdit',
+        component: UserEdit
+      }
+    ]
   },
   {
     path: '/viewclients',
     name: 'ViewClients',
     component: ViewClients,
-    beforeEnter: (to, from) => {
-      if (isAuthorized.value) return true
-      return '/'
-    }
+  },
+  {
+    path: '/addnotes/:id',
+    name: 'AddNotes',
+    component: AddNotes,
+    props: true,
+  },
+  {
+    path: '/viewnotes/:id',
+    name: 'ViewVotes',
+    component: ViewNotes,
+    props: true,
   },
   {
     path: '/notfound',

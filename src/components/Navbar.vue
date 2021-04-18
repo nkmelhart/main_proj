@@ -18,12 +18,11 @@
             View
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#"></a></li>
-            <li><router-link :to="{ name: 'ViewClients'}" class="dropdown-item" >Client Info</router-link></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><router-link :to="{ name: 'SearchTickets'}" class="dropdown-item">Tickets By Search</router-link></li>
+            <li><router-link :to="{ name: 'SearchTickets'}" class="dropdown-item">Active Tickets By Search</router-link></li>
             <li><hr class="dropdown-divider"></li>
             <li><router-link :to="{ name: 'ClosedTickets' }" class="dropdown-item" href="#">Closed Tickets</router-link></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><router-link :to="{ name: 'ViewClients'}" class="dropdown-item" >Client Info</router-link></li>
           </ul>
         </li>
         <li class="nav-item dropdown me-3">
@@ -31,10 +30,9 @@
             Manage
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#"></a></li>
-            <li><router-link :to="{name: 'ManageUsers'}" class="dropdown-item" >Users</router-link></li>
+            <li><router-link :to="{name: 'UserEdit'}" class="dropdown-item" >Users</router-link></li>
             <li><hr class="dropdown-divider"></li>
-            <li><router-link :to="{name: 'ManageClients'}" class="dropdown-item">Clients</router-link></li>
+            <li><router-link :to="{name: 'ClientEdit'}" class="dropdown-item">Clients</router-link></li>
           </ul>
         </li>
       </ul>
